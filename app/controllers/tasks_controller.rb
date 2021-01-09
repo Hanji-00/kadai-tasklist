@@ -19,7 +19,7 @@ class TasksController < ApplicationController
             flash[:success] = "Taskが正常に登録されました"
             redirect_to @task
         else
-            flash[:denger] = "Taskが登録されませんでした"
+            flash.now[:denger] = "Taskが登録されませんでした"
             render :new
         end
     end
@@ -51,6 +51,6 @@ class TasksController < ApplicationController
     private
     
     def task_params
-        params.require(:task).permit(:content)
+        params.require(:task).permit(:content, :status)
     end
 end

@@ -1,5 +1,7 @@
 <h1>Sign up</h1>
 
+<%= render "users/error_messages", model: @user %>
+
 <div>
   
   <%= form_with(model: @user, local: true) do |f| %>
